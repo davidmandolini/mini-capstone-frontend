@@ -13,7 +13,7 @@ export default {
         .post("/products", this.newProductParams)
         .then((response) => {
           console.log(response.data, "Product created");
-          this.$route.push("/products");
+          this.$router.push("/products");
         })
         .catch((error) => {
           console.log(error.response.data.errors);
