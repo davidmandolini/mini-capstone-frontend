@@ -4,6 +4,7 @@ export default {
   data: function () {
     return {
       newProductParams: {},
+      errors: [],
     };
   },
   created: function () {},
@@ -16,7 +17,8 @@ export default {
           this.$router.push("/products");
         })
         .catch((error) => {
-          console.log(error.response.data.errors);
+          this.errors = error.response.data.errors;
+          console.log(this.errors);
         });
     },
   },
